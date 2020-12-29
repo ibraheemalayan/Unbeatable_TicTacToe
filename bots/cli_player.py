@@ -11,7 +11,7 @@ class CliPlayer(XOPlayer):
 
         print(game.get_printable_grid())
 
-        num = input("> Enter your next move, enter square number: ")
+        num = input("> " + get_sign(self.sign) + "'s turn, enter square number: ")
 
         if not self.valid_input(num, game):
             return self.play(game)
