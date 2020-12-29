@@ -1,9 +1,9 @@
-from signs import X, O
+from enums import X, O
 from Game import Game
-from bots.cli_player import CliPlayer
-from signs import X, O
+from players.cli_player import CliPlayer
+from players.bots.bot import Bot
 
-p1 = CliPlayer(X)
+p1 = Bot(X)
 p2 = CliPlayer(O)
 
 game = Game(p1, p2)

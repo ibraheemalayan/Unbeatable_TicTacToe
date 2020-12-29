@@ -1,5 +1,5 @@
-from bots.player import XOPlayer
-from signs import get_sign, get_state, X, O
+from players.player import XOPlayer
+from enums import get_sign, get_state, X, O
 
 class CliPlayer(XOPlayer):
     ''' CLI XO Player object '''

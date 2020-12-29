@@ -9,6 +9,15 @@ O_wins_STAT = 12
 DRAW_STAT = 1
 Continue_STAT = 0
 
+# <Bots land> 
+
+No_must_move = 0
+ 
+
+
+# </Bots land> 
+
+
 def get_sign(sign):
     if sign == None:
         return " "

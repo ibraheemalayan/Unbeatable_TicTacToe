@@ -1,4 +1,4 @@
-from signs import get_sign, get_state, X, O, X_wins_STAT, O_wins_STAT, Continue_STAT, DRAW_STAT
+from enums import get_sign, get_state, X, O, X_wins_STAT, O_wins_STAT, Continue_STAT, DRAW_STAT
 
 class Game:
     ''' XO (tic tac toc) game object '''

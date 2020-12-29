@@ -8,22 +8,16 @@ _____________
 
 TODOs 
 
-* make git repo and push to github ( open source )
 * document the whole thing
 * build it with react
 
-
-* check for winner func
-* human player object
-* get game status (using enums)
-* in the game class make (abort and annonuce winner) func
-* make a play func in game class ( has the main game loop )
 * record plans or game steps 
 * make a winning dashboard for the most winners with unique plans
 * enter your name to play
 * sqllite with sqlmap orm for saves and players and plans for each bot
 * test all bots against all possibilties to determine winnig rate
 
+* all bots use the same method as the same start of Thinking, check if there is a move for win or lose prevent
 
 
 
