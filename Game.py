@@ -1,4 +1,3 @@
-from enums import get_sign, get_state, X, O, X_wins_STAT, O_wins_STAT, Continue_STAT, DRAW_STAT
 
 class Game:
     ''' XO (tic tac toc) game object '''
@@ -8,15 +7,15 @@ class Game:
 
     def start(self):
 
-        while(self.game_state() == Continue_STAT):
+        while(self.game_state() == self.enums.Continue_STAT):
 
-            current_player = 0 if (self.turn == X) else 1
+            current_player = 0 if (self.turn == self.enums.X) else 1
 
             move = self.players[current_player].play(self)
 
             self.grid[move] = self.turn
 
-            self.turn = O if (self.turn == X) else X
+            self.turn = self.enums.O if (self.turn == self.enums.X) else self.enums.X
 
         
         for p in self.players:
@@ -47,10 +46,10 @@ class Game:
         # check if there is empty squares ( check if game should continue )
         for i in self.grid:
             if not i:
-                return Continue_STAT 
+                return self.enums.Continue_STAT 
         
         # return a DRAW state
-        return DRAW_STAT
+        return self.enums.DRAW_STAT
             
 
     def get_printable_grid(self):
@@ -61,9 +60,9 @@ class Game:
         res = upper_line
 
         for i in range(0,9,3):
-            row_str = ( "| " + get_sign(self.grid[i]) +
-                       " | " +  get_sign(self.grid[i+1]) +
-                       " | " + get_sign(self.grid[i+2]) + " |\n")
+            row_str = ( "| " + self.enums.get_sign(self.grid[i]) +
+                       " | " +  self.enums.get_sign(self.grid[i+1]) +
+                       " | " + self.enums.get_sign(self.grid[i+2]) + " |\n")
             res = res + row_str + row_down_borders
 
         return res
@@ -73,10 +72,12 @@ class Game:
             return True
         return False
 
-    def __init__(self, player1, player2):
+    def __init__(self, player1, player2, enums):
+
+        self.enums = enums
 
         self.grid = [None]*9
 
         self.players = [player1, player2]
 
-        self.turn = X
+        self.turn = self.enums.X

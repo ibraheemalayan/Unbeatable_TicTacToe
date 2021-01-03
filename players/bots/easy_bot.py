@@ -1,17 +1,11 @@
-from .bot import Bot
 from random import randint
 
-class Rand_Bot(Bot):
-    ''' stupid bot that plays randomly '''
+from .bot import Bot
 
-    # overrides the default behaviour of checking for "must moves"
-    # because this bot should be completely random
-    def play(self, game):
-        return self.think(game)
+class EasyBot(Bot):
+    '''easy bot checks for must moves then plays randomly'''
 
-    # overrides the super method
-    def think(self, game):
-
+    def Think(self, game):
         empty_squares = []
         
         # check for empty square
@@ -25,4 +19,3 @@ class Rand_Bot(Bot):
         rand = randint( 0, len(empty_squares)-1 )
 
         return empty_squares[rand]
-

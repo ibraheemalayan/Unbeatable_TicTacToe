@@ -8,18 +8,15 @@ _____________
 
 TODOs 
 
-* document the whole thing
+*** document the whole thing
 * build it with react
 
 * record plans or game steps 
 * make a winning dashboard for the most winners with unique plans
-* enter your name to play
+*** enter your name to play
 * sqllite with sqlmap orm for saves and players and plans for each bot
 * test all bots against all possibilties to determine winnig rate
-
-* all bots use the same method as the same start of Thinking, check if there is a move for win or lose prevent
-
-
+*** make a testing game class that puts the player in all different possibilties of grids
 
 
 
