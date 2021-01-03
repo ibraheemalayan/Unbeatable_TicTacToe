@@ -18,6 +18,10 @@ TODOs
 * test all bots against all possibilties to determine winnig rate
 *** make a testing game class that puts the player in all different possibilties of grids
 
+********* instead of random use the square that has most possibilties
+
+****** anything leads to win with must moves should be made as plan and followed
+
 
 
 
@@ -50,3 +54,80 @@ winning :
 
 /////////////////
 
+_____________
+| 0 | 1 | 2 |
+|___|___|___|
+| 3 | 4 | 5 |
+|___|___|___|
+| 6 | 7 | 8 |
+|___|___|___|
+
+
+
+X plans 
+
+: starting at corner
+
+    :: he plays center:
+        you can do two: 
+
+        a. play on the opposite corner
+
+            i = 8 if p = 0
+            i = 2 if p = 6
+            i = 0 if p = 8
+            i = 2 if p = 6
+
+               if he plays any corner you won with must moves
+
+               if he plays any edge you reach to a tie with must moves and randoms
+        
+        b. play on far edge of your corner
+
+                if he plays : 
+                    
+                    - p opposite corner or near corner , it's draw with randoms and must moves
+
+                    - far corner, you win with must moves
+
+                    - near ot edge, you put in bt corner and win with must moves
+
+                    - near bt edge, you do one must move then 
+                        - if he plays near edge ot you put on p opposite corner and win with must moves
+
+                        - if he plays corner (near your second move and not opposite to your p) you win with must moves
+                        
+                        else its draw with must moves and randoms
+                    
+                    else its draw with must moves, no randoms
+    
+
+    :: he plays corner:
+        
+        you play only corners until you win with must moves
+
+    :: he plays far edge 
+        
+        you play the corner not near him and wou win with must moves
+
+    :: he plays near edge
+
+        you play center then any the edge near your first step and win with must moves 
+        or
+        you play the not opposite corner that there is a free square between it and you then play center and win with must moves
+
+        
+
+
+                    
+
+O wins in case 
+
+0,1,6,m4,any corner, 5 , mmmm win
+
+                    
+            
+
+
+        
+               

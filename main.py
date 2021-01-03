@@ -7,7 +7,7 @@ from players.bots.easy_bot import EasyBot
 enums = Enums()
 
 p1 = CliPlayer(enums.X)
-p2 = EasyBot(enums.O)
+p2 = CliPlayer(enums.O)
 
 game = Game(p1, p2, enums)
 
