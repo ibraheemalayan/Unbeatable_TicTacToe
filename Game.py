@@ -38,7 +38,7 @@ class Game:
                 return self.grid[k]
 
         # check cross lines for wins
-        if (self.grid[k]) and (
+        if (self.grid[4]) and (
                (self.grid[4] == self.grid[8] and self.grid[4] == self.grid[0])
                or (self.grid[4] == self.grid[2] and self.grid[4] == self.grid[6])):
             
