@@ -2,9 +2,6 @@
 class Game:
     ''' XO (tic tac toc) game object '''
 
-    def get_grid(self):
-        return self.grid
-
     def start(self):
 
         while(self.game_state() == self.enums.Continue_STAT):
@@ -14,6 +11,8 @@ class Game:
             move = self.players[current_player].play(self)
 
             self.grid[move] = self.turn
+
+            self.gameplay.append(move)
 
             self.turn = self.enums.O if (self.turn == self.enums.X) else self.enums.X
 
@@ -50,7 +49,8 @@ class Game:
         
         # return a DRAW state
         return self.enums.DRAW_STAT
-            
+
+# Helping methods ###############################    
 
     def get_printable_grid(self):
         
@@ -72,6 +72,8 @@ class Game:
             return True
         return False
 
+    
+
     def __init__(self, player1, player2, enums):
 
         self.enums = enums
@@ -81,3 +83,5 @@ class Game:
         self.players = [player1, player2]
 
         self.turn = self.enums.X
+
+        self.gameplay = []

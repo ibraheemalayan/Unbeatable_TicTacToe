@@ -1,3 +1,5 @@
+from random import randint
+
 from players.player import XOPlayer
 from .plans import generate_plans
 
@@ -12,7 +14,7 @@ class Bot(XOPlayer):
 
         must_move = self.must_move(game)
 
-        if not must_move:
+        if must_move == None:
             return self.Think(game)
 
         return must_move
@@ -41,7 +43,22 @@ class Bot(XOPlayer):
         # TODO award on multiple prevent loss moves with diffrenet values ( inevitable loss )
 
         return None
+    
+    def random_move(self, game):
+
+        empty_squares = []
         
+        # check for empty square
+        i = 0
+        while(i<9):
+            if not game.square_full(i):
+                empty_squares.append(i)
+            i += 1
+        
+        # choose a random empty square
+        rand = randint( 0, len(empty_squares)-1 )
+
+        return empty_squares[rand]
 
     # checks line for must fill squares
     def critical_square_of_line(self, line, game):
@@ -60,6 +77,8 @@ class Bot(XOPlayer):
                 
                 if game.grid[ full_squares[0] ] == self.sign:
                     return (empty_square, game.enums.win_move)
+
+                print(" Prevent loss move is > " + str(empty_square))
 
                 return (empty_square, game.enums.prevent_loss_move)
         return None
